@@ -8,7 +8,7 @@ import java.rmi.registry.LocateRegistry;
 
 public class RmiServer {
     public static void main(String[] args) throws RemoteException {
-        IHello hello = new HelloImpl();
+        IHelloService hello = new HelloServiceImpl();
         LocateRegistry.createRegistry(8888);
         try {
             Naming.bind("rmi://localhost:8888/hello",hello);

@@ -8,7 +8,7 @@ import java.rmi.RemoteException;
 public class RmiClient {
     public static void main(String[] args) {
         try {
-            IHello hello = (IHello) Naming.lookup("rmi://localhost:8888/hello");
+            IHelloService hello = (IHelloService) Naming.lookup("rmi://localhost:8888/hello");
             hello.say("哈哈");
         } catch (NotBoundException e) {
             e.printStackTrace();
